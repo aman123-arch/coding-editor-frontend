@@ -30,18 +30,19 @@ function App() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [theme, setTheme] = useState("light");
-
+  
   const handleRun = async () => {
-    try {
-      const res = await axios.post("https://coding-editor-backend-up4f.onrender.com/run", {
-        code,
-        input
-      });
-      setOutput(res.data.output);
-    } catch (err) {
-      setOutput("Error: " + err.message);
-    }
+  try {
+    const res = await axios.post("https://coding-editor-backend-up4f.onrender.com/run", {
+      code,
+      input
+    });
+    setOutput(res.data.output);
+   } catch (err) {
+    setOutput("Error: " + err.message);
+   }
   };
+
 
   const insertTemplate = (templateKey) => {
     setCode(templates[templateKey]);
