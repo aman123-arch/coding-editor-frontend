@@ -33,7 +33,7 @@ function App() {
 
   const handleRun = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/run", {
+      const res = await axios.post("https://coding-editor-backend-up4f.onrender.com/run", {
         code,
         input
       });
